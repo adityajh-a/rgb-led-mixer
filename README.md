@@ -1,3 +1,5 @@
+### [download project report pdf!](https://github.com/adityajh-a/rgb-led-mixer/blob/main/RGB%20LED%20Color%20Mixer%20using%20Arduino.pdf)
+
 # RGB LED Controller with Button Toggle and Potentiometers
 
 This Arduino project lets you control an RGB LED using three potentiometers (for red, green, and blue brightness) and a single push-button that toggles the LED on or off. It demonstrates the use of PWM, analog inputs, and simple state-based button logic.
