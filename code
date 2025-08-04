@@ -1,0 +1,46 @@
+int blue = 9;
+int green = 10;
+int red = 11;
+
+int redPot = A0;
+int greenPot = A1;
+int bluePot = A2;
+
+const int BUTTON = 12;
+int state = 0;
+int val = 0;
+int old_val = 0;
+
+void setup() {
+  pinMode(red, OUTPUT);
+  pinMode(green, OUTPUT);
+  pinMode(blue, OUTPUT);
+  pinMode(BUTTON, INPUT);
+}
+
+void loop() {
+  val = digitalRead(BUTTON);
+  
+  if (val == HIGH && old_val == LOW) {
+    state = 1 - state;
+    delay(10);
+  }
+
+  old_val = val;
+
+  int redVal = analogRead(redPot) / 4;
+  int greenVal = analogRead(greenPot) / 4;
+  int blueVal = analogRead(bluePot) / 4;
+
+  if (state == 1) {
+    analogWrite(red, redVal);
+    analogWrite(green, greenVal);
+    analogWrite(blue, blueVal);
+  } else {
+    analogWrite(red, 0);
+    analogWrite(green, 0);
+    analogWrite(blue, 0);
+  }
+
+  delay(50);
+}
